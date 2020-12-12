@@ -1,0 +1,35 @@
+{
+  "env": {
+    "node": true
+  },
+  "extends": "airbnb-base",
+  "plugins": ["promise"],
+  "rules": {
+    "import/prefer-default-export": "off",
+    "class-methods-use-this": "off",
+    "newline-per-chained-call": "off",
+    "import/no-cycle": "off",
+    "no-restricted-syntax": "off",
+    "import/extensions": "off",
+    "camelcase": "off",
+    "no-async-promise-executor": "off",
+    "promise/always-return": "off",
+    "no-await-in-loop": "off",
+    "no-console": "off",
+    "no-continue": "off",
+    "promise/catch-or-return": "off",
+    "import/no-dynamic-require": "off",
+    "global-require": "off",
+    "no-unused-expressions": "off",
+    "no-underscore-dangle": "off",
+    "no-loop-func": "off",
+    "promise/no-return-wrap": "error",
+    "promise/param-names": "error",
+    "promise/no-native": "off",
+    "promise/no-nesting": "error",
+    "promise/no-promise-in-callback": "error",
+    "promise/no-callback-in-promise": "error",
+    "promise/no-return-in-finally": "error",
+    "prefer-arrow-callback": "error"
+  }
+}
