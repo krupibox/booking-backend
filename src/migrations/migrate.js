@@ -46,7 +46,7 @@ const { Sequelize } = pkgSequelize;
       .catch((e) => console.error(e));
 
     await sequelize.getQueryInterface()
-      .bulkInsert('favorites', seed.comments)
+      .bulkInsert('favorites', seed.favorites)
       .then(() => console.log(`[OK] Insert favorites: ${seed.favorites.length}`))
       .catch((e) => console.error(e));
 

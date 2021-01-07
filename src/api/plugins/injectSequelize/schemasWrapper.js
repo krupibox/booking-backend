@@ -16,18 +16,18 @@ export default (sequelize) => {
     role: { type: Sequelize.STRING, allowNull: false, defaultValue: 'ADMIN' },
     last_login_at: { type: 'DATETIME', defaultValue: null },
     created_at: { type: 'TIMESTAMP', defaultValue: Sequelize.fn('NOW'), allowNull: false },
-  }, { tableName: 'users', timestamps: false }),
+  }, { tableName: 'users', timestamps: false });
 
   sequelize.define('City', {
     id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
     title: { type: Sequelize.STRING, allowNull: false },
     alias: { type: Sequelize.STRING, allowNull: false },
     description: { type: Sequelize.STRING, allowNull: true },
-  }, { tableName: 'cities', timestamps: false }),
+  }, { tableName: 'cities', timestamps: false });
 
   sequelize.define('Hotel', {
     id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
-    city_id: { type: Sequelize.INTEGER },
+    city_id: { type: Sequelize.INTEGER, allowNull: false },
     title: { type: Sequelize.STRING, allowNull: false },
     alias: { type: Sequelize.STRING, allowNull: false },
     description: { type: Sequelize.STRING, allowNull: false },
@@ -37,25 +37,25 @@ export default (sequelize) => {
     price: { type: Sequelize.DECIMAL(10, 2), allowNull: false },
     type: { type: Sequelize.STRING, allowNull: false },
     // facilities: { type: Sequelize.STRING, allowNull: false },
-  }, { tableName: 'hotels', timestamps: false }),
+  }, { tableName: 'hotels', timestamps: false });
 
   sequelize.define('Rating', {
     id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
-    hotel_id: { type: Sequelize.INTEGER },
-    user_id: { type: Sequelize.INTEGER },
-    rating: { type: Sequelize.DECIMAL },
-  }, { tableName: 'ratings', timestamps: false }),
+    hotel_id: { type: Sequelize.INTEGER, allowNull: false },
+    user_id: { type: Sequelize.INTEGER, allowNull: false },
+    rating: { type: Sequelize.DECIMAL(1, 2) },
+  }, { tableName: 'ratings', timestamps: false });
 
   sequelize.define('Comment', {
     id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
-    hotel_id: { type: Sequelize.INTEGER },
-    user_id: { type: Sequelize.INTEGER },
+    hotel_id: { type: Sequelize.INTEGER, allowNull: false },
+    user_id: { type: Sequelize.INTEGER, allowNull: false },
     text: { type: Sequelize.STRING, allowNull: false },
-  }, { tableName: 'comments', timestamps: false }),
+  }, { tableName: 'comments', timestamps: false });
 
   sequelize.define('Favorite', {
     id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
-    hotel_id: { type: Sequelize.INTEGER },
-    user_id: { type: Sequelize.INTEGER },
+    hotel_id: { type: Sequelize.INTEGER, allowNull: false },
+    user_id: { type: Sequelize.INTEGER, allowNull: false },
   }, { tableName: 'favorites', timestamps: false });
 };
