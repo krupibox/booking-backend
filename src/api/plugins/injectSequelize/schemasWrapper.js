@@ -22,7 +22,7 @@ export default (sequelize) => {
     id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
     title: { type: Sequelize.STRING, allowNull: false },
     alias: { type: Sequelize.STRING, allowNull: false },
-    description: { type: Sequelize.STRING, allowNull: true },
+    description: { type: Sequelize.TEXT, allowNull: true },
   }, { tableName: 'cities', timestamps: false });
 
   sequelize.define('Hotel', {
@@ -30,7 +30,7 @@ export default (sequelize) => {
     city_id: { type: Sequelize.INTEGER, allowNull: false },
     title: { type: Sequelize.STRING, allowNull: false },
     alias: { type: Sequelize.STRING, allowNull: false },
-    description: { type: Sequelize.STRING, allowNull: false },
+    description: { type: Sequelize.TEXT, allowNull: false },
     preview_image: { type: Sequelize.STRING, allowNull: true },
     // images: { type: Sequelize.STRING, allowNull: false },
     rooms: { type: Sequelize.INTEGER, allowNull: false },
@@ -43,7 +43,7 @@ export default (sequelize) => {
     id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
     hotel_id: { type: Sequelize.INTEGER, allowNull: false },
     user_id: { type: Sequelize.INTEGER, allowNull: false },
-    rating: { type: Sequelize.DECIMAL(1, 2), allowNull: true },
+    rating: { type: Sequelize.DECIMAL(10, 2), allowNull: true },
   }, { tableName: 'ratings', timestamps: false });
 
   sequelize.define('Comment', {

@@ -1,5 +1,5 @@
 
-const users = [
+export const users = [
   {
     role: 'admin',
     email: 'admin@gmail.com',
@@ -11,7 +11,7 @@ const users = [
   },
 ];
 
-const cities = [
+export const cities = [
   {
     id: 1,
     title: 'Москва',
@@ -20,7 +20,7 @@ const cities = [
   },
 ];
 
-const hotels = [
+export const hotels = [
   {
     id: 1,
     city_id: 1,
@@ -43,7 +43,7 @@ const hotels = [
   },
 ];
 
-const ratings = [
+export const ratings = [
   {
     id: 1,
     hotel_id: 1,
@@ -52,7 +52,7 @@ const ratings = [
   },
 ];
 
-const comments = [
+export const comments = [
   {
     id: 1,
     hotel_id: 1,
@@ -61,14 +61,10 @@ const comments = [
   },
 ];
 
-const favorites = [
+export const favorites = [
   {
     id: 1,
     hotel_id: 1,
     user_id: 1,
   },
 ];
-
-export default {
-  users, cities, hotels, ratings, comments, favorites,
-};
