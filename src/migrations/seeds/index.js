@@ -32,7 +32,6 @@ const hotels = [
       'https://cf.bstatic.com/images/hotel/max1024x768/278/278332092.jpg',
       'hhttps://cf.bstatic.com/images/hotel/max1024x768/273/273387160.jpg',
     ],
-    is_favorite: false,
     rooms: 1,
     price: 160,
     type: 'Standart',
@@ -66,7 +65,7 @@ const favorites = [
     id: 1,
     hotel_id: 1,
     user_id: 1,
-    isFavorite: false,
+    is_favorite: false,
   },
 ];
 
