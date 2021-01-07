@@ -43,7 +43,7 @@ export default (sequelize) => {
     id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
     hotel_id: { type: Sequelize.INTEGER, allowNull: false },
     user_id: { type: Sequelize.INTEGER, allowNull: false },
-    rating: { type: Sequelize.DECIMAL(1, 2) },
+    rating: { type: Sequelize.DECIMAL(1, 2), allowNull: true },
   }, { tableName: 'ratings', timestamps: false });
 
   sequelize.define('Comment', {
